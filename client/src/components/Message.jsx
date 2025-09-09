@@ -5,8 +5,8 @@ import Markdown from "react-markdown";
 import Prism from "prismjs";
 
 function Message({ message }) {
-    useEffect(() => {
-      Prism.highlightAll();
+  useEffect(() => {
+    Prism.highlightAll();
   }, [message.content]);
 
   return (
@@ -29,7 +29,7 @@ function Message({ message }) {
               className="w-full max-w-md mt-2 rounded-md"
             />
           ) : (
-            <div className="text-sm dark:text-primary reset-tw">
+            <div className="text-sm dark:text-primary reset-tw break-words overflow-x-auto max-w-full markdown-body">
               <Markdown>{message.content}</Markdown>
             </div>
           )}
